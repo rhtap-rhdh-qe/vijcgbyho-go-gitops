@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vijcgbyho-go-gitops
+  description: This is GitOps manifest for vijcgbyho-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vijcgbyho-go
+    backstage.io/kubernetes-id: vijcgbyho-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vijcgbyho-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vijcgbyho-go
